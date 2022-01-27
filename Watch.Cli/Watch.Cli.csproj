@@ -6,6 +6,8 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <AssemblyName>watch</AssemblyName>
+        <RootNamespace>Watch.Cli</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
