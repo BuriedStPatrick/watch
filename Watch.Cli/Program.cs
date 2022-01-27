@@ -1,12 +1,16 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using Terminal.Gui;
 
-using Terminal.Gui;
-using Watch.Cli;
+namespace Watch.Cli;
 
 public static class Program
 {
-    public static Task<int> Main(params string[] args)
+    public static Task<int> Main(params string[]? args)
     {
+        if (args == null)
+        {
+            throw new ArgumentNullException(nameof(args));
+        }
+
         var splitter = Array.IndexOf(args, "--");
         var watchArgs = args[..splitter];
         var frequency = double.TryParse(watchArgs[0], out var parsed)

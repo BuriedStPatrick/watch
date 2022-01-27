@@ -5,10 +5,15 @@ namespace Watch.Cli;
 public sealed class App : Toplevel
 {
     public static TimeSpan UpdateFrequency { get; set; }
-    public static string[] Args { get; set; }
+    public static string[]? Args { get; set; }
 
     public App()
     {
+        if (Args == null)
+        {
+            throw new ArgumentNullException(nameof(Args));
+        }
+
         var view = new View
         {
             X = 0,
