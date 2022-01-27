@@ -6,7 +6,7 @@ A very simple watch-like command line utility written in .NET, using `Terminal.G
 
 ```bash
 # Inside Watch.Cli folder
-dotnet run -- <command>
+dotnet run -- <frequency-in-ms> <command>
 
 # Example: Display list of pods, update every second
 dotnet run -- 1000 -- kubectl get pods -n default
